@@ -5,7 +5,8 @@ const App = React.createClass({
   getInitialState() {
     return ({
       name: "Seb",
-      tempName: ""
+      tempName: "",
+      list: ["1", "2", "3"]
     })
   },
 	render() {
@@ -16,8 +17,13 @@ const App = React.createClass({
           Hello {this.state.name}.
         </div>
         <input onChange={this.handleChange} />
+        {this.state.list.map(value => { // Unique keys have to be specified just as in ng-repeat. In this case our values are unique.
+          return (
+            <div key={value}>{value}</div>
+          )
+        })}
       </div>
-		)
+		) // Equivalent to ng-repeat in angular. Sort of.
 	},
   handleClick() {
     this.setState({
