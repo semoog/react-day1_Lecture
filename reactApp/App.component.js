@@ -6,9 +6,10 @@ const App = React.createClass({
 		return (
 			<div>
 				Hello World.
+        {6 + 6}
 			</div>
 		)
 	}
 });
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app')); // Element to render the component onto.
